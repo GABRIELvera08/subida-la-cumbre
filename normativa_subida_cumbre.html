@@ -1,1805 +1,820 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta
-name="description"
-content="Normativa, seguridad y penalizaciones de la Subida La Cumbre Santiago del Teide."
->
-
-<title>Normativa | Subida La Cumbre</title>
-
-
-<style>
-
-:root{
---bg:#0b0d0f;
---panel:#15191d;
---text:#f5f5f2;
---muted:#aeb5ba;
---red:#ed3434;
---line:#30363b;
---lime:#d9ff57;
-}
-
-*{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif;
-line-height:1.6;
-}
-
-a{
-color:inherit;
-text-decoration:none;
-}
-
-.wrap{
-width:min(1100px,92%);
-margin:auto;
-}
-
-
-/* =========================
-   CABECERA
-========================= */
-
-.top{
-border-bottom:1px solid #ffffff20;
-background:#0b0d0ff2;
-position:sticky;
-top:0;
-z-index:100;
-backdrop-filter:blur(10px);
-}
-
-.nav{
-height:78px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-font-weight:900;
-letter-spacing:.04em;
-}
-
-.mark{
-width:42px;
-height:42px;
-background:var(--red);
-display:grid;
-place-items:center;
-font-weight:1000;
-font-style:italic;
-transform:skew(-10deg);
-}
-
-.brand small{
-display:block;
-color:#c5c9cc;
-font-size:10px;
-letter-spacing:.18em;
-margin-top:4px;
-}
-
-.back{
-font-size:11px;
-font-weight:900;
-letter-spacing:.1em;
-text-transform:uppercase;
-color:#d9dddf;
-}
-
-.back:hover{
-color:var(--lime);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-padding:90px 0 75px;
-border-bottom:1px solid var(--line);
-background:
-linear-gradient(90deg,#080a0df0,#080a0db8),
-url('fondo_santiago.png') center/cover;
-}
-
-.eyebrow{
-color:var(--lime);
-font-size:11px;
-font-weight:900;
-letter-spacing:.22em;
-text-transform:uppercase;
-}
-
-.hero h1{
-font-size:clamp(48px,8vw,88px);
-line-height:.9;
-letter-spacing:-.07em;
-margin:20px 0;
-}
-
-.hero h1 span{
-color:var(--red);
-}
-
-.hero p{
-max-width:700px;
-color:#d4d8da;
-font-size:16px;
-line-height:1.7;
-}
-
-
-/* =========================
-   CONTENIDO
-========================= */
-
-.section{
-padding:75px 0;
-}
-
-.section.dark{
-background:#101316;
-}
-
-.section-head{
-margin-bottom:35px;
-}
-
-.kicker{
-color:var(--red);
-font-size:11px;
-font-weight:900;
-letter-spacing:.2em;
-text-transform:uppercase;
-}
-
-h2{
-font-size:clamp(32px,5vw,55px);
-line-height:.98;
-letter-spacing:-.055em;
-margin:12px 0;
-}
-
-.intro{
-color:var(--muted);
-max-width:750px;
-line-height:1.75;
-}
-
-
-/* =========================
-   TARJETAS
-========================= */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
-}
-
-.card{
-background:var(--panel);
-border:1px solid var(--line);
-padding:28px;
-}
-
-.card.full{
-grid-column:1/-1;
-}
-
-.card-number{
-color:var(--red);
-font-size:11px;
-font-weight:900;
-letter-spacing:.16em;
-text-transform:uppercase;
-}
-
-.card h3{
-font-size:22px;
-margin:16px 0 12px;
-}
-
-.card p{
-color:var(--muted);
-font-size:14px;
-line-height:1.75;
-margin:0 0 15px;
-}
-
-.card ul{
-margin:15px 0 0;
-padding-left:20px;
-color:#d1d5d7;
-}
-
-.card li{
-margin-bottom:10px;
-}
-
-.card strong{
-color:#fff;
-}
-
-
-/* =========================
-   AVISOS
-========================= */
-
-.warning{
-border-left:4px solid var(--red);
-background:#191315;
-padding:22px 25px;
-margin-top:25px;
-}
-
-.warning strong{
-display:block;
-color:#fff;
-margin-bottom:7px;
-}
-
-.warning p{
-margin:0;
-color:#c8cccf;
-font-size:13px;
-line-height:1.7;
-}
-
-
-/* =========================
-   BANDERAS
-========================= */
-
-.flags{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px;
-margin-top:25px;
-}
-
-.flag{
-display:flex;
-align-items:center;
-gap:17px;
-background:var(--panel);
-border:1px solid var(--line);
-padding:18px;
-}
-
-.flag-box{
-width:52px;
-height:35px;
-border:1px solid #ffffff30;
-flex-shrink:0;
-display:grid;
-place-items:center;
-font-size:11px;
-font-weight:1000;
-}
-
-.flag.red .flag-box{
-background:#e52323;
-}
-
-.flag.yellow .flag-box{
-background:#f3d52f;
-color:#111;
-}
-
-.flag.blue .flag-box{
-background:#285bc9;
-}
-
-.flag.striped .flag-box{
-background:
-repeating-linear-gradient(
-135deg,
-#f1d631 0px,
-#f1d631 7px,
-#d63838 7px,
-#d63838 14px
-);
-}
-
-.flag-content b{
-display:block;
-font-size:14px;
-margin-bottom:3px;
-}
-
-.flag-content span{
-color:var(--muted);
-font-size:12px;
-line-height:1.5;
-}
-
-
-/* =========================
-   PENALIZACIONES
-========================= */
-
-.penalty-list{
-display:grid;
-gap:12px;
-margin-top:25px;
-}
-
-.penalty{
-display:grid;
-grid-template-columns:45px 1fr;
-gap:15px;
-background:var(--panel);
-border:1px solid var(--line);
-padding:18px;
-}
-
-.penalty-number{
-color:var(--red);
-font-weight:1000;
-font-size:14px;
-}
-
-.penalty-text b{
-display:block;
-font-size:14px;
-margin-bottom:4px;
-}
-
-.penalty-text span{
-color:var(--muted);
-font-size:12px;
-line-height:1.6;
-}
-
-
-/* =========================
-   300 €
-========================= */
-
-.money{
-margin-top:25px;
-padding:30px;
-border:1px solid var(--red);
-background:#180f10;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:25px;
-}
-
-.money small{
-display:block;
-color:#d0d3d5;
-font-size:10px;
-font-weight:900;
-letter-spacing:.15em;
-text-transform:uppercase;
-}
-
-.money b{
-font-size:clamp(35px,6vw,58px);
-color:var(--red);
-line-height:1;
-}
-
-
-/* =========================
-   DRIFT
-========================= */
-
-.drift-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px;
-margin-top:25px;
-}
-
-.drift{
-background:var(--panel);
-border:1px solid var(--line);
-padding:22px;
-}
-
-.drift b{
-display:block;
-font-size:30px;
-color:var(--lime);
-margin-bottom:8px;
-}
-
-.drift span{
-color:var(--muted);
-font-size:12px;
-line-height:1.6;
-}
-
-
-/* =========================
-   BOTÓN
-========================= */
-
-.btn{
-display:inline-block;
-padding:15px 20px;
-font-size:11px;
-font-weight:900;
-letter-spacing:.08em;
-text-transform:uppercase;
-background:var(--red);
-border:1px solid var(--red);
-color:white;
-margin-top:25px;
-}
-
-.btn:hover{
-filter:brightness(1.15);
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta{
-background:var(--red);
-padding:60px 0;
-}
-
-.cta-inner{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:25px;
-}
-
-.cta h2{
-margin:8px 0;
-}
-
-.cta p{
-margin:0;
-color:#ffe3e3;
-}
-
-.cta .btn{
-background:#101214;
-border-color:#101214;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-padding:35px 0;
-color:var(--muted);
-font-size:11px;
-}
-
-.footer-inner{
-border-top:1px solid var(--line);
-padding-top:25px;
-display:flex;
-justify-content:space-between;
-gap:20px;
-flex-wrap:wrap;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:760px){
-
-.nav{
-height:70px;
-}
-
-.brand small{
-font-size:8px;
-}
-
-.back{
-font-size:9px;
-}
-
-.hero{
-padding:70px 0 60px;
-}
-
-.hero h1{
-font-size:52px;
-}
-
-.section{
-padding:55px 0;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.card.full{
-grid-column:auto;
-}
-
-.flags{
-grid-template-columns:1fr;
-}
-
-.drift-grid{
-grid-template-columns:1fr;
-}
-
-.money{
-display:block;
-}
-
-.money b{
-display:block;
-margin-top:15px;
-}
-
-.cta-inner{
-display:block;
-}
-
-.cta .btn{
-margin-top:20px;
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Subida La Cumbre</title>
+
+  <style>
+    :root {
+      --bg: #0b0d0f;
+      --panel: #15191d;
+      --text: #f5f5f2;
+      --muted: #aeb5ba;
+      --red: #ed3434;
+      --line: #30363b;
+      --lime: #d9ff57;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 13, 15, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(11, 13, 15, 0.98) 0%,
+          rgba(11, 13, 15, 0.86) 45%,
+          rgba(11, 13, 15, 0.55) 100%
+        );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: var(--red);
+      opacity: 0.08;
+      border-radius: 50%;
+      right: -150px;
+      top: 50%;
+      transform: translateY(-50%);
+      filter: blur(30px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 10vw, 120px);
+      line-height: 0.9;
+      font-weight: 1000;
+      text-transform: uppercase;
+      max-width: 900px;
+      letter-spacing: -5px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid var(--line);
+      background: var(--text);
+      color: #0b0d0f;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--lime);
+    }
+
+    .btn.red {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    .btn.red:hover {
+      background: #ff4a4a;
+    }
+
+    .btn.dark {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn.dark:hover {
+      background: var(--text);
+      color: #0b0d0f;
+    }
+
+    /* SECTIONS */
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+    }
+
+    .section-title .small {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 28px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #4b5359;
+    }
+
+    .card .num {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    /* INFO */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .info-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 30px;
+    }
+
+    .info-box h3 {
+      text-transform: uppercase;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .info-box p {
+      color: var(--muted);
+    }
+
+    /* IMPORTANT */
+
+    .important {
+      background: var(--red);
+      color: white;
+      border: none;
+    }
+
+    .important h3,
+    .important p {
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 45px 24px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-title {
+      color: var(--text);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero-content {
+        padding: 60px 20px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- HEADER -->
 
-<!-- =========================
-     CABECERA
-========================= -->
+  <header>
+    <div class="nav">
 
-<header class="top">
+      <a href="./index.html" class="logo">
+        Subida <span>La Cumbre</span>
+      </a>
 
-<div class="wrap nav">
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#participantes">Pilotos</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#informacion">Información</a>
+      </nav>
 
-<a class="brand" href="./index.html">
+    </div>
+  </header>
 
-<span class="mark">
-LC
-</span>
 
-<span>
+  <!-- HERO -->
 
-SUBIDA LA CUMBRE
+  <main id="inicio">
 
-<small>
-SANTIAGO DEL TEIDE · MOTORSPORT
-</small>
+    <div class="hero">
 
-</span>
+      <div class="hero-content">
 
-</a>
+        <div class="eyebrow">
+          Santiago del Teide
+        </div>
 
+        <h1>
+          SUBIDA<br>
+          <span>LA CUMBRE</span>
+        </h1>
 
-<a class="back" href="./index.html#participantes">
+        <p>
+          Toda la información para pilotos, equipos y aficionados:
+          inscripción, normativa, seguridad y tiempos en directo.
+        </p>
 
-← Volver a pilotos y equipos
+        <div class="hero-buttons">
 
-</a>
+          <a
+            class="btn red"
+            href="./inscripcion_subida_cumbre.html"
+          >
+            Participa ↗
+          </a>
 
-</div>
+          <a
+            class="btn dark"
+            href="#participantes"
+          >
+            Información
+          </a>
 
-</header>
+        </div>
 
+      </div>
 
+    </div>
 
-<!-- =========================
-     HERO
-========================= -->
 
-<section class="hero">
+    <!-- PILOTOS Y EQUIPOS -->
 
-<div class="wrap">
+    <section id="participantes">
 
-<div class="eyebrow">
-Pilotos · Equipos · Organización
-</div>
+      <div class="section-title">
 
-<h1>
-NORMATIVA<br>
-<span>Y PENALIZACIONES</span>
-</h1>
+        <div>
+          <div class="small">
+            Información oficial
+          </div>
 
-<p>
+          <h2>
+            Para pilotos<br>
+            y equipos
+          </h2>
+        </div>
 
-Resumen práctico de las principales normas, obligaciones,
-señales de pista y conductas sancionables que deben conocer
-los pilotos y equipos participantes en la Subida La Cumbre.
+        <p>
+          Accede rápidamente a los documentos y servicios
+          necesarios para participar en la Subida La Cumbre.
+        </p>
 
-</p>
+      </div>
 
-</div>
 
-</section>
+      <div class="cards">
 
+        <!-- PARTICIPA -->
 
+        <article class="card">
 
-<!-- =========================
-     01
-========================= -->
+          <div class="num">
+            01 / INSCRIPCIÓN
+          </div>
 
-<section class="section">
+          <h3>
+            Participa
+          </h3>
 
-<div class="wrap">
+          <p>
+            Accede a la información y formulario de inscripción
+            para participar en la Subida La Cumbre.
+          </p>
 
-<div class="section-head">
+          <a
+            class="btn red"
+            href="./inscripcion_subida_cumbre.html"
+          >
+            Inscripción ↗
+          </a>
 
-<div class="kicker">
-01 / Requisitos
-</div>
+        </article>
 
-<h2>
-ANTES DE SALIR<br>
-A COMPETIR.
-</h2>
 
-<p class="intro">
+        <!-- NORMATIVA -->
 
-Todos los participantes deberán cumplir las condiciones
-administrativas, deportivas y técnicas establecidas por la
-organización y por la reglamentación federativa aplicable.
+        <article class="card">
 
-</p>
+          <div class="num">
+            02 / REGLAMENTACIÓN
+          </div>
 
-</div>
+          <h3>
+            Normativa
+          </h3>
 
+          <p>
+            Consulta de forma clara y ordenada las principales
+            normas, obligaciones, banderas y penalizaciones
+            para pilotos y equipos.
+          </p>
 
-<div class="cards">
+          <a
+            class="btn"
+            href="./normativa_subida_cumbre.html"
+          >
+            Normativa y penalizaciones ↗
+          </a>
 
+        </article>
 
-<article class="card">
 
-<div class="card-number">
-01 / DOCUMENTACIÓN
-</div>
+        <!-- TIEMPOS -->
 
-<h3>
-Verificaciones administrativas
-</h3>
+        <article class="card">
 
-<p>
-Antes de la participación deberán realizarse las verificaciones
-administrativas correspondientes.
-</p>
+          <div class="num">
+            03 / CRONOMETRAJE
+          </div>
 
-<ul>
+          <h3>
+            Tiempos en directo
+          </h3>
 
-<li>
-Documentación del participante.
-</li>
+          <p>
+            Consulta los tiempos y resultados de la prueba
+            durante el desarrollo de la competición.
+          </p>
 
-<li>
-Licencia válida y documentación requerida.
-</li>
+          <a
+            class="btn"
+            href="#"
+          >
+            Próximamente ↗
+          </a>
 
-<li>
-Cumplimiento de los requisitos establecidos por la organización.
-</li>
+        </article>
 
-</ul>
+      </div>
 
-</article>
+    </section>
 
 
-<article class="card">
+    <!-- SEGURIDAD -->
 
-<div class="card-number">
-02 / VEHÍCULO
-</div>
+    <section id="seguridad">
 
-<h3>
-Verificaciones técnicas
-</h3>
+      <div class="section-title">
 
-<p>
-Los vehículos deberán superar las verificaciones técnicas
-establecidas para la prueba.
-</p>
+        <div>
+          <div class="small">
+            Seguridad
+          </div>
 
-<ul>
+          <h2>
+            Seguridad<br>
+            en carrera
+          </h2>
+        </div>
 
-<li>
-Vehículo conforme a la reglamentación aplicable.
-</li>
+        <p>
+          La seguridad de pilotos, equipos, organización y
+          público es una prioridad durante toda la prueba.
+        </p>
 
-<li>
-Elementos de seguridad correctamente instalados.
-</li>
+      </div>
 
-<li>
-Equipamiento obligatorio disponible y operativo.
-</li>
 
-</ul>
+      <div class="info-grid">
 
-</article>
+        <div class="info-box">
 
+          <h3>
+            Equipamiento
+          </h3>
 
-</div>
+          <p>
+            Todos los participantes deberán disponer del
+            equipamiento de seguridad exigido por la normativa
+            aplicable y mantenerlo correctamente colocado
+            durante la competición.
+          </p>
 
+        </div>
 
-<div class="warning">
 
-<strong>
-IMPORTANTE
-</strong>
+        <div class="info-box">
 
-<p>
+          <h3>
+            Banderas
+          </h3>
 
-La superación de las verificaciones no exime al participante
-de mantener el vehículo y el equipamiento en condiciones
-reglamentarias durante toda la competición.
+          <p>
+            Respeta en todo momento las indicaciones de los
+            oficiales y el significado de las banderas mostradas
+            durante la prueba.
+          </p>
 
-</p>
+        </div>
 
-</div>
 
-</div>
+        <div class="info-box">
 
-</section>
+          <h3>
+            Asistencia
+          </h3>
 
+          <p>
+            Las zonas de asistencia deberán mantenerse limpias,
+            ordenadas y cumplir las condiciones de seguridad
+            establecidas por la organización.
+          </p>
 
+        </div>
 
-<!-- =========================
-     02
-========================= -->
 
-<section class="section dark">
+        <div class="info-box important">
 
-<div class="wrap">
+          <h3>
+            Importante
+          </h3>
 
-<div class="section-head">
+          <p>
+            El incumplimiento de las normas de seguridad puede
+            provocar sanciones, exclusión o descalificación
+            dependiendo de la gravedad de la infracción.
+          </p>
 
-<div class="kicker">
-02 / Procedimiento
-</div>
+        </div>
 
-<h2>
-SALIDA Y<br>
-LLEGADA.
-</h2>
+      </div>
 
-<p class="intro">
 
-El procedimiento de salida y el comportamiento durante el
-tramo deben respetarse en todo momento.
+      <div style="margin-top: 25px;">
 
-</p>
+        <a
+          class="btn"
+          href="./seguridad_subida_cumbre.html"
+        >
+          Información de seguridad ↗
+        </a>
 
-</div>
+      </div>
 
+    </section>
 
-<div class="cards">
 
+    <!-- INFORMACIÓN -->
 
-<article class="card">
+    <section id="informacion">
 
-<div class="card-number">
-SALIDA
-</div>
+      <div class="section-title">
 
-<h3>
-Procedimiento de salida
-</h3>
+        <div>
+          <div class="small">
+            La prueba
+          </div>
 
-<ul>
+          <h2>
+            Información
+          </h2>
+        </div>
 
-<li>
-El piloto deberá estar disponible con la antelación establecida por la organización.
-</li>
+        <p>
+          Consulta las diferentes secciones de la web para
+          conocer todos los detalles de la competición.
+        </p>
 
-<li>
-El vehículo deberá encontrarse preparado y situado en la zona indicada antes de su salida.
-</li>
+      </div>
 
-<li>
-Las salidas serán individuales.
-</li>
 
-<li>
-El orden de salida podrá establecerse según el número de competición y podrá ser modificado por la Dirección de Carrera.
-</li>
+      <div class="info-grid">
 
-<li>
-Entre participantes existirá el intervalo de tiempo establecido por la organización.
-</li>
+        <div class="info-box">
 
-</ul>
+          <h3>
+            Pilotos
+          </h3>
 
-</article>
+          <p>
+            Información sobre participación, verificaciones,
+            salida, seguridad y comportamiento durante la prueba.
+          </p>
 
+        </div>
 
-<article class="card">
 
-<div class="card-number">
-LLEGADA
-</div>
+        <div class="info-box">
 
-<h3>
-Después de la meta
-</h3>
+          <h3>
+            Equipos
+          </h3>
 
-<ul>
+          <p>
+            Información sobre asistencia, zonas autorizadas,
+            seguridad y obligaciones durante el evento.
+          </p>
 
-<li>
-La llegada se realizará a velocidad de competición.
-</li>
+        </div>
 
-<li>
-Una vez superada la meta deberá reducirse la velocidad.
-</li>
 
-<li>
-No deberá detenerse el vehículo inmediatamente después de la línea de llegada salvo indicación de los oficiales o por una situación de emergencia.
-</li>
+        <div class="info-box">
 
-<li>
-Deberán seguirse las indicaciones del personal de la prueba.
-</li>
+          <h3>
+            Público
+          </h3>
 
-</ul>
+          <p>
+            Sigue las indicaciones de la organización y respeta
+            siempre las zonas habilitadas para el público.
+          </p>
 
-</article>
+        </div>
 
 
-</div>
+        <div class="info-box">
 
-</div>
+          <h3>
+            Organización
+          </h3>
 
-</section>
+          <p>
+            Las indicaciones de los oficiales y responsables
+            de la prueba deberán ser respetadas en todo momento.
+          </p>
 
+        </div>
 
+      </div>
 
-<!-- =========================
-     03 SEGURIDAD
-========================= -->
+    </section>
 
-<section class="section">
+  </main>
 
-<div class="wrap">
 
-<div class="section-head">
+  <!-- FOOTER -->
 
-<div class="kicker">
-03 / Seguridad
-</div>
+  <footer>
 
-<h2>
-LA SEGURIDAD<br>
-ES OBLIGATORIA.
-</h2>
+    <div class="footer-inner">
 
-<p class="intro">
+      <div>
+        <div class="footer-title">
+          Subida La Cumbre
+        </div>
 
-La seguridad del piloto, copiloto cuando corresponda,
-oficiales y público es prioritaria durante toda la prueba.
+        <div>
+          Santiago del Teide
+        </div>
+      </div>
 
-</p>
 
-</div>
+      <div>
+        © Subida La Cumbre
+      </div>
 
+    </div>
 
-<div class="cards">
-
-
-<article class="card">
-
-<div class="card-number">
-EQUIPAMIENTO
-</div>
-
-<h3>
-Antes de la salida
-</h3>
-
-<ul>
-
-<li>
-El piloto deberá utilizar el equipamiento de seguridad exigido.
-</li>
-
-<li>
-Los cinturones o arneses deberán estar correctamente abrochados.
-</li>
-
-<li>
-Las ventanillas deberán encontrarse en la posición exigida.
-</li>
-
-<li>
-Los sistemas de extinción deberán estar instalados y operativos cuando sean obligatorios.
-</li>
-
-</ul>
-
-</article>
-
-
-<article class="card">
-
-<div class="card-number">
-CONDUCCIÓN
-</div>
-
-<h3>
-Dentro del tramo
-</h3>
-
-<ul>
-
-<li>
-No se permite realizar maniobras peligrosas.
-</li>
-
-<li>
-Deberá facilitarse el adelantamiento cuando corresponda.
-</li>
-
-<li>
-No deberá circularse en sentido contrario al establecido.
-</li>
-
-<li>
-Ante una avería deberá actuarse de forma que se reduzca el riesgo para el resto de participantes.
-</li>
-
-</ul>
-
-</article>
-
-
-</div>
-
-
-<div class="warning">
-
-<strong>
-CONDUCCIÓN PELIGROSA
-</strong>
-
-<p>
-
-Las maniobras que pongan en peligro a otros participantes,
-oficiales o espectadores podrán ser objeto de sanción y,
-en los casos graves, exclusión de la prueba.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     04 BANDERAS
-========================= -->
-
-<section class="section dark">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="kicker">
-04 / Señalización
-</div>
-
-<h2>
-CONOCE<br>
-LAS BANDERAS.
-</h2>
-
-<p class="intro">
-
-Las banderas transmiten instrucciones y advertencias
-durante la competición. Deben obedecerse inmediatamente.
-
-</p>
-
-</div>
-
-
-<div class="flags">
-
-
-<div class="flag red">
-
-<div class="flag-box">
-ROJA
-</div>
-
-<div class="flag-content">
-
-<b>
-Detención
-</b>
-
-<span>
-Detener la competición inmediatamente y seguir las indicaciones de los oficiales.
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="flag yellow">
-
-<div class="flag-box">
-AMARILLA
-</div>
-
-<div class="flag-content">
-
-<b>
-Peligro
-</b>
-
-<span>
-Reducir la velocidad, no adelantar y estar preparado para modificar la trayectoria.
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="flag blue">
-
-<div class="flag-box">
-AZUL
-</div>
-
-<div class="flag-content">
-
-<b>
-Adelantamiento
-</b>
-
-<span>
-Facilitar el paso al participante que se aproxima más rápidamente.
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="flag striped">
-
-<div class="flag-box">
-⚠
-</div>
-
-<div class="flag-content">
-
-<b>
-Superficie deslizante
-</b>
-
-<span>
-Advertencia de presencia de aceite, agua, suciedad u otro elemento que pueda reducir la adherencia.
-</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     05 ASISTENCIA
-========================= -->
-
-<section class="section">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="kicker">
-05 / Asistencia
-</div>
-
-<h2>
-PARQUES DE<br>
-ASISTENCIA.
-</h2>
-
-<p class="intro">
-
-Las zonas de asistencia deberán mantenerse limpias,
-ordenadas y respetar las normas establecidas por la
-organización.
-
-</p>
-
-</div>
-
-
-<div class="cards">
-
-
-<article class="card">
-
-<div class="card-number">
-ORDEN Y LIMPIEZA
-</div>
-
-<h3>
-Trabaja con seguridad
-</h3>
-
-<ul>
-
-<li>
-Mantener limpia y ordenada la zona de asistencia.
-</li>
-
-<li>
-Utilizar una protección adecuada bajo el vehículo para evitar vertidos.
-</li>
-
-<li>
-Disponer de los medios de extinción exigidos.
-</li>
-
-<li>
-Evitar cualquier situación que pueda generar peligro para personas o vehículos.
-</li>
-
-</ul>
-
-</article>
-
-
-<article class="card">
-
-<div class="card-number">
-VELOCIDAD
-</div>
-
-<h3>
-Máximo 30 km/h
-</h3>
-
-<p>
-
-Dentro de las zonas de asistencia deberá respetarse
-el límite de velocidad establecido.
-
-</p>
-
-<p>
-
-La velocidad máxima indicada para la zona de asistencia
-es de <strong>30 km/h</strong>.
-
-</p>
-
-</article>
-
-
-</div>
-
-
-<div class="money">
-
-<div>
-
-<small>
-Exceso de velocidad en asistencia
-</small>
-
-<p style="margin:7px 0 0;color:#d0d3d5;font-size:13px;">
-
-La superación del límite establecido puede conllevar
-la penalización correspondiente.
-
-</p>
-
-</div>
-
-<b>
-300 €
-</b>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     06 PENALIZACIONES
-========================= -->
-
-<section class="section dark">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="kicker">
-06 / Penalizaciones
-</div>
-
-<h2>
-LO QUE PUEDE<br>
-COSTARTE LA PRUEBA.
-</h2>
-
-<p class="intro">
-
-El incumplimiento de las normas puede dar lugar a penalizaciones,
-sanciones deportivas o exclusión de la competición dependiendo
-de la gravedad de la infracción.
-
-</p>
-
-</div>
-
-
-<div class="penalty-list">
-
-
-<div class="penalty">
-
-<div class="penalty-number">
-01
-</div>
-
-<div class="penalty-text">
-
-<b>
-No obedecer a los oficiales
-</b>
-
-<span>
-Ignorar las instrucciones de los comisarios, Dirección de Carrera u otros oficiales puede ser sancionable.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="penalty">
-
-<div class="penalty-number">
-02
-</div>
-
-<div class="penalty-text">
-
-<b>
-Circular en sentido contrario
-</b>
-
-<span>
-Circular en sentido contrario al establecido para la prueba supone una conducta especialmente peligrosa.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="penalty">
-
-<div class="penalty-number">
-03
-</div>
-
-<div class="penalty-text">
-
-<b>
-Maniobras peligrosas
-</b>
-
-<span>
-Cualquier acción que ponga en peligro a otros participantes, oficiales o espectadores podrá ser sancionada.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="penalty">
-
-<div class="penalty-number">
-04
-</div>
-
-<div class="penalty-text">
-
-<b>
-Exhibiciones o derrapes no autorizados
-</b>
-
-<span>
-Las exhibiciones que no estén contempladas o autorizadas dentro de la actividad deportiva podrán ser sancionadas.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="penalty">
-
-<div class="penalty-number">
-05
-</div>
-
-<div class="penalty-text">
-
-<b>
-Incumplimiento de las normas de seguridad
-</b>
-
-<span>
-El incumplimiento de las obligaciones relacionadas con el equipamiento y la seguridad podrá conllevar sanciones.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="penalty">
-
-<div class="penalty-number">
-06
-</div>
-
-<div class="penalty-text">
-
-<b>
-Incumplimiento en asistencia
-</b>
-
-<span>
-Las infracciones cometidas dentro de las zonas de asistencia, incluido el exceso de velocidad, serán sancionables.
-</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="warning">
-
-<strong>
-EXCLUSIÓN
-</strong>
-
-<p>
-
-Las infracciones consideradas graves pueden provocar
-la exclusión o descalificación del participante según
-la decisión de los órganos deportivos competentes.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     07 DRIFT
-========================= -->
-
-<section class="section">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="kicker">
-07 / Actividad Drift
-</div>
-
-<h2>
-REGLAS<br>
-ESPECÍFICAS.
-</h2>
-
-<p class="intro">
-
-Cuando se realice la actividad de Drift, deberán respetarse
-las condiciones específicas establecidas para esta modalidad.
-
-</p>
-
-</div>
-
-
-<div class="drift-grid">
-
-
-<div class="drift">
-
-<b>
-5
-</b>
-
-<span>
-Número máximo de pasadas de Drift establecido para la actividad.
-</span>
-
-</div>
-
-
-<div class="drift">
-
-<b>
-1 min
-</b>
-
-<span>
-Intervalo de salida individual entre participantes.
-</span>
-
-</div>
-
-
-<div class="drift">
-
-<b>
-SIN BATALLAS
-</b>
-
-<span>
-No se realizarán enfrentamientos simultáneos entre vehículos.
-</span>
-
-</div>
-
-
-</div>
-
-
-<div class="cards" style="margin-top:16px;">
-
-
-<article class="card full">
-
-<div class="card-number">
-CONDICIONES
-</div>
-
-<h3>
-Drift controlado y seguro
-</h3>
-
-<ul>
-
-<li>
-Las salidas serán individuales.
-</li>
-
-<li>
-La actividad no se desarrollará mediante batallas o enfrentamientos simultáneos.
-</li>
-
-<li>
-Deberán respetarse las zonas de Drift y los puntos de referencia establecidos.
-</li>
-
-<li>
-Las maniobras deberán realizarse dentro de las zonas autorizadas.
-</li>
-
-<li>
-Cualquier acción considerada peligrosa podrá ser sancionada.
-</li>
-
-<li>
-La actividad de Drift no sustituye las obligaciones generales de seguridad.
-</li>
-
-</ul>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     08 CLASIFICACIÓN
-========================= -->
-
-<section class="section dark">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="kicker">
-08 / Clasificación
-</div>
-
-<h2>
-GANA EL MEJOR<br>
-TIEMPO.
-</h2>
-
-<p class="intro">
-
-La clasificación se establecerá utilizando los tiempos
-oficiales obtenidos durante la competición y aplicando,
-cuando corresponda, las penalizaciones establecidas.
-
-</p>
-
-</div>
-
-
-<div class="cards">
-
-
-<article class="card">
-
-<div class="card-number">
-TIEMPO
-</div>
-
-<h3>
-Resultado de carrera
-</h3>
-
-<p>
-
-El resultado se obtiene a partir del mejor tiempo oficial
-válido del participante según el sistema de competición
-establecido.
-
-</p>
-
-</article>
-
-
-<article class="card">
-
-<div class="card-number">
-PENALIZACIONES
-</div>
-
-<h3>
-Tiempo + sanciones
-</h3>
-
-<p>
-
-Las penalizaciones que correspondan se aplicarán conforme
-a la normativa y pueden afectar al resultado final.
-
-</p>
-
-</article>
-
-
-</div>
-
-
-<div class="warning">
-
-<strong>
-CLASIFICACIÓN FINAL
-</strong>
-
-<p>
-
-El participante con el menor tiempo válido una vez aplicadas
-las penalizaciones correspondientes ocupará la mejor posición
-de la clasificación.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     AVISO FINAL
-========================= -->
-
-<section class="section">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="kicker">
-09 / Importante
-</div>
-
-<h2>
-LA REGLA MÁS<br>
-IMPORTANTE.
-</h2>
-
-<p class="intro">
-
-Compite rápido, pero compite con cabeza. La seguridad
-de pilotos, equipos, oficiales y público está por encima
-de cualquier resultado deportivo.
-
-</p>
-
-</div>
-
-
-<div class="warning">
-
-<strong>
-ESTE DOCUMENTO ES UN RESUMEN INFORMATIVO
-</strong>
-
-<p>
-
-Esta página resume de forma sencilla las principales normas
-para facilitar su consulta a pilotos y equipos.
-
-En caso de discrepancia entre este resumen y el Reglamento
-Particular, las Prescripciones Comunes, la reglamentación
-federativa aplicable o las instrucciones oficiales de la prueba,
-prevalecerán siempre estos documentos oficiales.
-
-</p>
-
-</div>
-
-
-<a class="btn" href="./index.html#participantes">
-
-← Volver a pilotos y equipos
-
-</a>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta">
-
-<div class="wrap cta-inner">
-
-<div>
-
-<div class="eyebrow" style="color:#fff;">
-Subida La Cumbre
-</div>
-
-<h2>
-NOS VEMOS EN LA MONTAÑA.
-</h2>
-
-<p>
-Respeta las reglas. Respeta la carretera. Disfruta del motor.
-</p>
-
-</div>
-
-
-<a class="btn" href="./index.html">
-Volver a la web ↗
-</a>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-<div class="wrap footer-inner">
-
-<div>
-
-<strong style="color:#fff;">
-SUBIDA LA CUMBRE · SANTIAGO DEL TEIDE
-</strong>
-
-<p>
-Normativa y penalizaciones · Documento informativo
-</p>
-
-</div>
-
-
-<div>
-© 2026 · Organización de la prueba
-</div>
-
-</div>
-
-</footer>
-
+  </footer>
 
 </body>
 </html>
