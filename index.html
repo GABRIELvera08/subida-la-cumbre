@@ -1,1269 +1,1430 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Web informativa de la Subida La Cumbre Santiago del Teide.">
+
+<meta name="description" content="Subida La Cumbre - Santiago del Teide">
+
 <title>Subida La Cumbre | Santiago del Teide</title>
 
 <style>
+
 :root{
---bg:#0b0d0f;
---panel:#15191d;
---text:#f5f5f2;
---muted:#aeb5ba;
---red:#ed3434;
---line:#30363b;
---lime:#d9ff57
+    --bg:#0b0d0f;
+    --panel:#15191d;
+    --text:#f5f5f2;
+    --muted:#aeb5ba;
+    --red:#ed3434;
+    --line:#30363b;
+    --lime:#d9ff57;
 }
 
 *{
-box-sizing:border-box
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-background:var(--bg);
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 a{
-color:inherit;
-text-decoration:none
+    color:inherit;
+    text-decoration:none;
 }
 
 .wrap{
-width:min(1160px,92%);
-margin:auto
+    width:min(1160px,92%);
+    margin:auto;
 }
 
+
+/* =========================
+   CABECERA
+========================= */
+
 .top{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-z-index:3;
-border-bottom:1px solid #ffffff25
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    border-bottom:1px solid #ffffff25;
 }
 
 .nav{
-height:78px;
-display:flex;
-align-items:center;
-justify-content:space-between
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:12px;
-font-weight:900;
-letter-spacing:.04em
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:900;
+    letter-spacing:.04em;
 }
 
 .mark{
-width:42px;
-height:42px;
-background:var(--red);
-display:grid;
-place-items:center;
-font-weight:1000;
-font-style:italic;
-transform:skew(-10deg)
+    width:42px;
+    height:42px;
+    background:var(--red);
+    display:grid;
+    place-items:center;
+    font-weight:1000;
+    font-style:italic;
+    transform:skew(-10deg);
 }
 
 .brand small{
-display:block;
-color:#c5c9cc;
-font-size:10px;
-letter-spacing:.18em;
-margin-top:4px
+    display:block;
+    color:#c5c9cc;
+    font-size:10px;
+    letter-spacing:.18em;
+    margin-top:4px;
 }
 
 .links{
-display:flex;
-gap:27px;
-font-size:12px;
-font-weight:800;
-text-transform:uppercase
+    display:flex;
+    gap:27px;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
 }
 
 .links a:hover{
-color:var(--lime)
+    color:var(--lime);
 }
 
 .menu{
-display:none;
-background:none;
-color:white;
-border:1px solid #ffffff55;
-padding:10px
+    display:none;
+    background:none;
+    color:white;
+    border:1px solid #ffffff55;
+    padding:10px;
+    cursor:pointer;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-min-height:680px;
-display:flex;
-align-items:end;
-position:relative;
-overflow:hidden;
-background:
-linear-gradient(90deg,#080a0de8 0%,#080a0d9c 48%,#080a0d22 100%),
-linear-gradient(0deg,#0b0d0f 0%,transparent 45%),
-url('fondo_santiago.png') center/cover
+    min-height:680px;
+    display:flex;
+    align-items:end;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080a0de8 0%,
+            #080a0d9c 48%,
+            #080a0d22 100%
+        ),
+        linear-gradient(
+            0deg,
+            #0b0d0f 0%,
+            transparent 45%
+        ),
+        url("fondo_santiago.png") center/cover;
 }
 
 .hero:after{
-content:'CUMBRE';
-position:absolute;
-right:-25px;
-top:110px;
-font-size:clamp(100px,20vw,270px);
-font-weight:1000;
-color:#ffffff0b;
-letter-spacing:-.08em;
-pointer-events:none
+    content:"CUMBRE";
+    position:absolute;
+    right:-25px;
+    top:110px;
+    font-size:clamp(100px,20vw,270px);
+    font-weight:1000;
+    color:#ffffff0b;
+    letter-spacing:-.08em;
+    pointer-events:none;
 }
 
 .hero-content{
-position:relative;
-z-index:1;
-padding:170px 0 80px;
-max-width:780px
+    position:relative;
+    z-index:1;
+    padding:170px 0 80px;
+    max-width:780px;
 }
 
 .eyebrow{
-color:var(--lime);
-font-weight:900;
-font-size:11px;
-letter-spacing:.22em;
-text-transform:uppercase
+    color:var(--lime);
+    font-weight:900;
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
 }
 
 .hero h1{
-font-size:clamp(48px,8vw,100px);
-line-height:.88;
-letter-spacing:-.07em;
-margin:20px 0
+    font-size:clamp(48px,8vw,100px);
+    line-height:.88;
+    letter-spacing:-.07em;
+    margin:20px 0;
 }
 
 .hero h1 span{
-color:var(--red)
+    color:var(--red);
 }
 
 .lead{
-color:#d4d8da;
-font-size:17px;
-line-height:1.65;
-max-width:550px
+    color:#d4d8da;
+    font-size:17px;
+    line-height:1.65;
+    max-width:550px;
 }
 
 .actions{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:28px
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:28px;
 }
 
 .btn{
-padding:15px 20px;
-font-size:11px;
-font-weight:900;
-letter-spacing:.08em;
-text-transform:uppercase;
-background:var(--red);
-border:1px solid var(--red);
-color:white;
-display:inline-block;
-cursor:pointer
+    padding:15px 20px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    background:var(--red);
+    border:1px solid var(--red);
+    color:white;
+    display:inline-block;
+    cursor:pointer;
 }
 
 .btn.alt{
-background:transparent;
-border-color:#ffffff70
+    background:transparent;
+    border-color:#ffffff70;
 }
 
 .btn:hover{
-filter:brightness(1.15)
+    filter:brightness(1.15);
 }
 
+
+/* =========================
+   TICKER
+========================= */
+
 .ticker{
-background:var(--lime);
-color:#10120b;
-overflow:hidden;
-white-space:nowrap;
-font-weight:1000;
-font-size:12px;
-letter-spacing:.15em;
-padding:13px 0
+    background:var(--lime);
+    color:#10120b;
+    overflow:hidden;
+    white-space:nowrap;
+    font-weight:1000;
+    font-size:12px;
+    letter-spacing:.15em;
+    padding:13px 0;
 }
 
 .ticker span{
-margin:0 28px
+    margin:0 28px;
 }
+
+
+/* =========================
+   SECCIONES
+========================= */
 
 .section{
-padding:88px 0
-}
-
-.section-head{
-display:flex;
-align-items:end;
-justify-content:space-between;
-gap:25px;
-margin-bottom:32px
-}
-
-.kicker{
-color:var(--red);
-font-size:11px;
-font-weight:900;
-letter-spacing:.2em;
-text-transform:uppercase
-}
-
-.section h2{
-font-size:clamp(34px,5vw,58px);
-line-height:.98;
-letter-spacing:-.055em;
-margin:12px 0 0
-}
-
-.muted{
-color:var(--muted);
-line-height:1.7
-}
-
-.intro-grid{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:55px;
-align-items:center
-}
-
-.photo-card{
-min-height:350px;
-background:
-linear-gradient(0deg,#0008,#0000),
-url('montana_reto.png') center/cover;
-position:relative
-}
-
-.photo-card:before{
-content:'SANTIAGO DEL TEIDE';
-position:absolute;
-bottom:20px;
-left:20px;
-font-size:11px;
-font-weight:900;
-letter-spacing:.15em
-}
-
-.event-title{
-font-size:clamp(24px,3.2vw,38px);
-font-weight:1000;
-line-height:1.12;
-letter-spacing:-.045em;
-margin:28px 0 0;
-color:var(--text)
-}
-
-.event-title span{
-color:var(--red);
-white-space:nowrap
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:1px;
-background:var(--line);
-border:1px solid var(--line);
-margin-top:30px
-}
-
-.stat{
-background:var(--bg);
-padding:19px 14px
-}
-
-.stat b{
-font-size:25px;
-display:block
-}
-
-.stat small{
-color:var(--muted);
-font-size:10px;
-text-transform:uppercase;
-letter-spacing:.1em
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px
-}
-
-.card{
-background:var(--panel);
-border:1px solid var(--line);
-padding:25px;
-min-height:205px
-}
-
-.num{
-color:var(--red);
-font-size:12px;
-font-weight:900;
-letter-spacing:.15em
-}
-
-.card h3{
-font-size:21px;
-margin:24px 0 10px
-}
-
-.card p{
-color:var(--muted);
-font-size:13px;
-line-height:1.65;
-margin:0
-}
-
-.card .btn{
-margin-top:20px
+    padding:88px 0;
 }
 
 .dark{
-background:#101316
-}
-
-.route{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center
-}
-
-.route-visual{
-min-height:380px;
-background:linear-gradient(135deg,#20272b,#111416);
-border:1px solid var(--line);
-display:grid;
-place-items:center;
-position:relative;
-overflow:hidden
-}
-
-.route-visual svg{
-width:85%;
-max-height:350px
-}
-
-.route-image{
-display:block;
-min-height:0
-}
-
-.route-image img{
-display:block;
-width:100%;
-height:auto;
-max-height:680px;
-object-fit:contain
-}
-
-.route-image .route-note{
-background:#0b0d0fdd;
-padding:8px 10px;
-border-radius:3px
-}
-
-.route-note{
-position:absolute;
-bottom:18px;
-left:20px;
-color:var(--muted);
-font-size:10px;
-letter-spacing:.1em
-}
-
-.timeline{
-border-left:1px solid #555;
-margin:28px 0 0 6px;
-padding-left:22px
-}
-
-.time{
-position:relative;
-margin:0 0 23px
-}
-
-.time:before{
-content:'';
-position:absolute;
-left:-28px;
-top:4px;
-width:9px;
-height:9px;
-background:var(--red);
-border-radius:50%
-}
-
-.time b{
-display:block;
-font-size:14px
-}
-
-.time span{
-color:var(--muted);
-font-size:12px
-}
-
-.cta{
-padding:65px 0;
-background:var(--red)
-}
-
-.cta-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:25px
-}
-
-.cta h2{
-font-size:clamp(30px,5vw,54px);
-letter-spacing:-.05em;
-margin:10px 0
-}
-
-.cta .btn{
-background:#101214;
-border-color:#101214
-}
-
-.footer{
-padding:35px 0;
-color:var(--muted);
-font-size:11px
-}
-
-.foot{
-display:flex;
-justify-content:space-between;
-gap:20px;
-flex-wrap:wrap;
-border-top:1px solid var(--line);
-padding-top:25px
-}
-
-.social{
-display:flex;
-gap:18px
-}
-
-.tag{
-display:inline-block;
-border:1px solid #ffffff35;
-padding:7px 10px;
-font-size:10px;
-color:#d4d8da;
-margin-top:15px
-}
-
-.security-button{
-margin-top:30px;
-margin-bottom:10px
-}
-
-.security-button .btn{
-display:inline-block;
-background:var(--red);
-border-color:var(--red)
-}
-
-@media(max-width:760px){
-
-.links{
-display:none;
-position:absolute;
-top:78px;
-left:0;
-width:100%;
-background:#101316;
-padding:22px;
-flex-direction:column;
-gap:18px
-}
-
-.links.open{
-display:flex
-}
-
-.menu{
-display:block
-}
-
-.hero{
-min-height:630px
-}
-
-.hero-content{
-padding-bottom:65px
-}
-
-.intro-grid,
-.route{
-grid-template-columns:1fr;
-gap:25px
-}
-
-.photo-card{
-min-height:260px
-}
-
-.cards{
-grid-template-columns:1fr
-}
-
-.section{
-padding:65px 0
+    background:#101316;
 }
 
 .section-head{
-display:block
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:25px;
+    margin-bottom:32px;
 }
 
+.kicker{
+    color:var(--red);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+
+.section h2{
+    font-size:clamp(34px,5vw,58px);
+    line-height:.98;
+    letter-spacing:-.055em;
+    margin:12px 0 0;
+}
+
+.muted{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+
+/* =========================
+   PRUEBA
+========================= */
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:55px;
+    align-items:center;
+}
+
+.photo-card{
+    min-height:350px;
+    background:
+        linear-gradient(0deg,#0008,#0000),
+        url("montana_reto.png") center/cover;
+    position:relative;
+}
+
+.photo-card:before{
+    content:"SANTIAGO DEL TEIDE";
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.15em;
+}
+
+.event-title{
+    font-size:clamp(24px,3.2vw,38px);
+    font-weight:1000;
+    line-height:1.12;
+    letter-spacing:-.045em;
+    margin:28px 0 0;
+}
+
+.event-title span{
+    color:var(--red);
+    white-space:nowrap;
+}
+
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
 .stats{
-grid-template-columns:repeat(3,1fr)
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:30px;
 }
 
 .stat{
-padding:15px 8px
+    background:var(--bg);
+    padding:19px 14px;
 }
 
 .stat b{
-font-size:20px
+    font-size:25px;
+    display:block;
+}
+
+.stat small{
+    color:var(--muted);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:25px;
+    min-height:205px;
+}
+
+.num{
+    color:var(--red);
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.15em;
+}
+
+.card h3{
+    font-size:21px;
+    margin:24px 0 10px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.65;
+    margin:0;
+}
+
+.card .btn{
+    margin-top:20px;
+}
+
+
+/* =========================
+   RECORRIDO
+========================= */
+
+.route{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.route-visual{
+    min-height:380px;
+    background:#111416;
+    border:1px solid var(--line);
+    display:grid;
+    place-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.route-image img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:680px;
+    object-fit:contain;
+}
+
+.route-note{
+    position:absolute;
+    bottom:18px;
+    left:20px;
+    color:var(--muted);
+    font-size:10px;
+    letter-spacing:.1em;
+    background:#0b0d0fdd;
+    padding:8px 10px;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+    border-left:1px solid #555;
+    margin:28px 0 0 6px;
+    padding-left:22px;
+}
+
+.time{
+    position:relative;
+    margin:0 0 23px;
+}
+
+.time:before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:4px;
+    width:9px;
+    height:9px;
+    background:var(--red);
+    border-radius:50%;
+}
+
+.time b{
+    display:block;
+    font-size:14px;
+}
+
+.time span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+
+/* =========================
+   SEGURIDAD
+========================= */
+
+.security-button{
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:65px 0;
+    background:var(--red);
 }
 
 .cta-inner{
-display:block
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.cta h2{
+    font-size:clamp(30px,5vw,54px);
+    letter-spacing:-.05em;
+    margin:10px 0;
 }
 
 .cta .btn{
-margin-top:18px
+    background:#101214;
+    border-color:#101214;
 }
 
-.security-button{
-margin-top:25px
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    padding:35px 0;
+    color:var(--muted);
+    font-size:11px;
 }
 
+.foot{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    padding-top:25px;
 }
+
+.social{
+    display:flex;
+    gap:18px;
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:760px){
+
+    .links{
+        display:none;
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        background:#101316;
+        padding:22px;
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .links.open{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        min-height:630px;
+    }
+
+    .hero-content{
+        padding-bottom:65px;
+    }
+
+    .intro-grid,
+    .route{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .photo-card{
+        min-height:260px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:65px 0;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .stats{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .stat{
+        padding:15px 8px;
+    }
+
+    .stat b{
+        font-size:20px;
+    }
+
+    .cta-inner{
+        display:block;
+    }
+
+    .cta .btn{
+        margin-top:18px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     CABECERA
+========================= -->
 
 <header class="top">
 
-<div class="wrap nav">
+    <div class="wrap nav">
 
-<a class="brand" href="#inicio">
+        <a class="brand" href="#inicio">
 
-<span class="mark">LC</span>
+            <span class="mark">LC</span>
 
-<span>
-SUBIDA LA CUMBRE
-<small>SANTIAGO DEL TEIDE · MOTORSPORT</small>
-</span>
+            <span>
+                SUBIDA LA CUMBRE
+                <small>SANTIAGO DEL TEIDE · MOTORSPORT</small>
+            </span>
 
-</a>
+        </a>
 
-<button
-class="menu"
-aria-label="Abrir menú"
-onclick="document.querySelector('.links').classList.toggle('open')">
-☰
-</button>
 
-<nav class="links">
+        <button
+            class="menu"
+            type="button"
+            aria-label="Abrir menú"
+            onclick="document.querySelector('.links').classList.toggle('open')">
 
-<a href="#prueba">Inicio</a>
-<a href="#programa">Programa</a>
-<a href="#recorrido">Recorrido</a>
-<a href="#participantes">Participantes</a>
-<a href="#seguridad">Seguridad</a>
-<a href="#galeria">Galería</a>
+            ☰
 
-</nav>
+        </button>
 
-</div>
+
+        <nav class="links">
+
+            <a href="#inicio">Inicio</a>
+            <a href="#programa">Programa</a>
+            <a href="#recorrido">Recorrido</a>
+            <a href="#participantes">Participantes</a>
+            <a href="#seguridad">Seguridad</a>
+            <a href="#galeria">Galería</a>
+
+        </nav>
+
+    </div>
 
 </header>
+
 
 
 <main>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="inicio">
 
-<div class="wrap hero-content">
+    <div class="wrap hero-content">
 
-<div class="eyebrow">
-Tenerife · Canarias · Automovilismo
-</div>
+        <div class="eyebrow">
+            Tenerife · Canarias · Automovilismo
+        </div>
 
-<h1>
-SUBIDA<br>
-<span>LA CUMBRE</span>
-</h1>
+        <h1>
+            SUBIDA<br>
+            <span>LA CUMBRE</span>
+        </h1>
 
-<p class="lead">
+        <p class="lead">
 
-<strong>I Edición de la subida La Cumbre Santiago del Teide.</strong><br>
+            <strong>I Edición de la Subida La Cumbre Santiago del Teide.</strong><br>
 
-Estamos encantados de anunciar esta nueva prueba de montaña en este tramo tan bonito de Tenerife. ¡Mucha suerte a todos los participantes!
+            Estamos encantados de anunciar esta nueva prueba
+            de montaña en este tramo tan bonito de Tenerife.
+            ¡Mucha suerte a todos los participantes!
 
-</p>
+        </p>
 
-<div class="actions">
 
-<a class="btn" href="#prueba">
-Descubre la prueba ↗
-</a>
+        <div class="actions">
 
-<a class="btn alt" href="#programa">
-Información del evento
-</a>
+            <a class="btn" href="#prueba">
+                Descubre la prueba ↗
+            </a>
 
-</div>
+            <a class="btn alt" href="#programa">
+                Información del evento
+            </a>
 
-<div class="tag">
-3 DE OCTUBRE DE 2027
-</div>
+        </div>
 
-</div>
+
+        <div class="tag">
+            3 DE OCTUBRE DE 2027
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     TICKER
+========================= -->
 
 <div class="ticker">
 
-<span>◆ PASIÓN POR EL MOTOR</span>
-<span>◆ RESPETO</span>
-<span>◆ SEGURIDAD</span>
-<span>◆ SANTIAGO DEL TEIDE</span>
-<span>◆ PASIÓN POR EL MOTOR</span>
+    <span>◆ PASIÓN POR EL MOTOR</span>
+    <span>◆ RESPETO</span>
+    <span>◆ SEGURIDAD</span>
+    <span>◆ SANTIAGO DEL TEIDE</span>
+    <span>◆ PASIÓN POR EL MOTOR</span>
 
 </div>
 
+
+
+<!-- =========================
+     LA PRUEBA
+========================= -->
 
 <section class="section" id="prueba">
 
-<div class="wrap intro-grid">
+    <div class="wrap intro-grid">
 
-<div>
+        <div>
 
-<div class="kicker">
-01 / La prueba
-</div>
+            <div class="kicker">
+                01 / La prueba
+            </div>
 
-<h2>
-LA MONTAÑA<br>
-MARCA EL RETO.
-</h2>
+            <h2>
+                LA MONTAÑA<br>
+                MARCA EL RETO.
+            </h2>
 
-<p class="muted">
+            <p class="muted">
 
-La subida de la Cumbre tiene un trazado muy técnico que no permite errores, pero a su vez, es una de las carreteras más bonitas de Tenerife.
+                La subida de La Cumbre tiene un trazado muy técnico
+                que no permite errores, pero a su vez, es una de las
+                carreteras más bonitas de Tenerife.
 
-</p>
+            </p>
 
-<p class="event-title">
-1ª Edición de la Subida a La Cumbre
-<span>| 3 / 10 / 27</span>
-</p>
+            <p class="event-title">
 
-</div>
+                1ª Edición de la Subida a La Cumbre
 
-<div class="photo-card" role="img" aria-label="Paisaje de montaña"></div>
+                <span>
+                    | 3 / 10 / 27
+                </span>
 
-</div>
+            </p>
+
+        </div>
+
+
+        <div
+            class="photo-card"
+            role="img"
+            aria-label="Paisaje de montaña">
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     PROGRAMA
+========================= -->
 
 <section class="section dark" id="programa">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div class="section-head">
+        <div class="section-head">
 
-<div>
+            <div>
 
-<div class="kicker">
-02 / Agenda
-</div>
+                <div class="kicker">
+                    02 / Agenda
+                </div>
 
-<h2>
-PROGRAMA<br>
-DEL EVENTO.
-</h2>
+                <h2>
+                    PROGRAMA<br>
+                    DEL EVENTO.
+                </h2>
 
-</div>
-
-<p class="muted">
-
-<strong>Verificaciones:</strong>
-2 / 10 / 2027
-
-<br>
-
-<strong>Prueba:</strong>
-3 / 10 / 2027
-
-</p>
-
-</div>
+            </div>
 
 
-<div class="cards">
+            <p class="muted">
+
+                <strong>Verificaciones:</strong>
+                2 / 10 / 2027
+
+                <br>
+
+                <strong>Prueba:</strong>
+                3 / 10 / 2027
+
+            </p>
+
+        </div>
 
 
-<article class="card">
-
-<div class="num">
-01 / PREVIO
-</div>
-
-<h3>
-Verificaciones
-</h3>
-
-<p>
-Verificaciones administrativas y técnicas de los vehículos participantes. Lugar y horario pendientes de publicación.
-</p>
-
-</article>
+        <div class="cards">
 
 
-<article class="card">
+            <article class="card">
 
-<div class="num">
-02 / JORNADA
-</div>
+                <div class="num">
+                    01 / PREVIO
+                </div>
 
-<h3>
-Reconocimientos
-</h3>
+                <h3>
+                    Verificaciones
+                </h3>
 
-<p>
-Información sobre reconocimientos, briefing y horarios oficiales pendiente de aprobación por la organización.
-</p>
+                <p>
+                    Verificaciones administrativas y técnicas
+                    de los vehículos participantes.
+                    Lugar y horario pendientes de publicación.
+                </p>
 
-</article>
-
-
-<article class="card">
-
-<div class="num">
-03 / SALIDA
-</div>
-
-<h3>
-Mangas oficiales
-</h3>
-
-<p>
-Entrenamientos y mangas de carrera según el reglamento particular y el programa horario definitivo.
-</p>
-
-</article>
+            </article>
 
 
-</div>
+            <article class="card">
 
-</div>
+                <div class="num">
+                    02 / JORNADA
+                </div>
+
+                <h3>
+                    Reconocimientos
+                </h3>
+
+                <p>
+                    Información sobre reconocimientos, briefing
+                    y horarios oficiales pendiente de aprobación
+                    por la organización.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="num">
+                    03 / SALIDA
+                </div>
+
+                <h3>
+                    Mangas oficiales
+                </h3>
+
+                <p>
+                    Entrenamientos y mangas de carrera según
+                    el reglamento particular y el programa
+                    horario definitivo.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     RECORRIDO
+========================= -->
 
 <section class="section" id="recorrido">
 
-<div class="wrap route">
+    <div class="wrap route">
 
-<div>
+        <div>
 
-<div class="kicker">
-03 / El trazado
-</div>
+            <div class="kicker">
+                03 / El trazado
+            </div>
 
-<h2>
-EL CAMINO<br>
-A LA CUMBRE.
-</h2>
+            <h2>
+                EL CAMINO<br>
+                A LA CUMBRE.
+            </h2>
 
-<p class="muted">
+            <p class="muted">
 
-Consulta aquí los datos técnicos del recorrido, el mapa de acceso, las zonas habilitadas para el público y los cortes de carretera cuando la organización los publique.
+                Consulta aquí los datos técnicos del recorrido,
+                el mapa de acceso, las zonas habilitadas para
+                el público y los cortes de carretera cuando
+                la organización los publique.
 
-</p>
-
-
-<div class="timeline">
-
-<div class="time">
-
-<b>
-Salida
-</b>
-
-<span>
-Parque de Santiago del Teide
-</span>
-
-</div>
+            </p>
 
 
-<div class="time">
-
-<b>
-Tramo cronometrado
-</b>
-
-<span>
-Carretera de la Cumbre · trazado según mapa
-</span>
-
-</div>
+            <div class="timeline">
 
 
-<div class="time">
+                <div class="time">
 
-<b>
-Meta
-</b>
+                    <b>
+                        Salida
+                    </b>
 
-<span>
-Restaurante Fleytas
-</span>
+                    <span>
+                        Parque de Santiago del Teide
+                    </span>
 
-</div>
-
-</div>
-
-</div>
+                </div>
 
 
-<div class="route-visual route-image">
+                <div class="time">
 
-<img
-src="trazado.png"
-alt="Mapa aéreo ilustrativo del trazado de la Subida La Cumbre Santiago del Teide">
+                    <b>
+                        Tramo cronometrado
+                    </b>
 
-<div class="route-note">
-VISTA AÉREA · TRAZADO ILUSTRATIVO PENDIENTE DE VALIDACIÓN
-</div>
+                    <span>
+                        Carretera de la Cumbre · trazado según mapa
+                    </span>
 
-</div>
+                </div>
 
-</div>
+
+                <div class="time">
+
+                    <b>
+                        Meta
+                    </b>
+
+                    <span>
+                        Restaurante Fleytas
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="route-visual route-image">
+
+            <img
+                src="trazado.png"
+                alt="Mapa del trazado de la Subida La Cumbre">
+
+            <div class="route-note">
+                VISTA AÉREA · TRAZADO ILUSTRATIVO
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     PARTICIPANTES
+========================= -->
 
 <section class="section dark" id="participantes">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div class="section-head">
+        <div class="section-head">
 
-<div>
+            <div>
 
-<div class="kicker">
-04 / Competición
-</div>
+                <div class="kicker">
+                    04 / Competición
+                </div>
 
-<h2>
-PARA PILOTOS<br>
-Y EQUIPOS.
-</h2>
+                <h2>
+                    PARA PILOTOS<br>
+                    Y EQUIPOS.
+                </h2>
 
-</div>
+            </div>
 
-</div>
-
-
-<div class="cards">
+        </div>
 
 
-<!-- INSCRIPCIONES -->
-
-<article class="card">
-
-<div class="num">
-INSCRIPCIONES
-</div>
-
-<h3>
-Participa
-</h3>
-
-<p>
-Accede al formulario de inscripción de la 1ª edición. Los datos y documentos definitivos se confirmarán en el reglamento particular.
-</p>
-
-<a class="btn" href="./inscripcion_subida_cumbre.html">
-Participa · Inscripción ↗
-</a>
-
-</article>
+        <div class="cards">
 
 
-<!-- NORMATIVA -->
+            <!-- INSCRIPCIONES -->
 
-<article class="card">
+            <article class="card">
 
-<div class="num">
-REGLAMENTACIÓN
-</div>
+                <div class="num">
+                    INSCRIPCIONES
+                </div>
 
-<h3>
-Normativa
-</h3>
+                <h3>
+                    Participa
+                </h3>
 
-<p>
-Consulta de forma clara y ordenada las principales normas, obligaciones, banderas y penalizaciones para pilotos y equipos.
-</p>
+                <p>
+                    Accede al formulario de inscripción
+                    de la 1ª edición. Los datos y documentos
+                    definitivos se confirmarán en el reglamento
+                    particular.
+                </p>
 
-<a class="btn" href="./normativa_subida_cumbre.html">
-Normativa y penalizaciones ↗
-</a>
+                <a
+                    class="btn"
+                    href="./inscripcion_subida_cumbre.html">
 
-</article>
+                    Participa · Inscripción ↗
 
+                </a>
 
-<!-- RESULTADOS -->
-
-<article class="card">
-
-<div class="num">
-RESULTADOS
-</div>
-
-<h3>
-Tiempos en directo
-</h3>
-
-<p>
-Enlace a cronometraje, clasificaciones y resultados finales: se añadirá cuando esté habilitado.
-</p>
-
-</article>
+            </article>
 
 
-</div>
+            <!-- NORMATIVA -->
 
-</div>
+            <article class="card">
+
+                <div class="num">
+                    REGLAMENTACIÓN
+                </div>
+
+                <h3>
+                    Normativa
+                </h3>
+
+                <p>
+                    Consulta de forma clara y ordenada
+                    las principales normas, obligaciones,
+                    banderas y penalizaciones para pilotos
+                    y equipos.
+                </p>
+
+                <a
+                    class="btn"
+                    href="./normativa_subida_cumbre.html">
+
+                    Normativa y penalizaciones ↗
+
+                </a>
+
+            </article>
+
+
+            <!-- RESULTADOS -->
+
+            <article class="card">
+
+                <div class="num">
+                    RESULTADOS
+                </div>
+
+                <h3>
+                    Tiempos en directo
+                </h3>
+
+                <p>
+                    Enlace a cronometraje, clasificaciones
+                    y resultados finales: se añadirá cuando
+                    esté habilitado.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     SEGURIDAD
+========================= -->
 
 <section class="section" id="seguridad">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div class="kicker">
-05 / Afición y seguridad
-</div>
+        <div class="kicker">
+            05 / Afición y seguridad
+        </div>
 
-<h2>
-DISFRUTA.<br>
-RESPETA. CUIDA.
-</h2>
+        <h2>
+            DISFRUTA.<br>
+            RESPETA. CUIDA.
+        </h2>
 
-<p class="muted" style="max-width:720px">
+        <p
+            class="muted"
+            style="max-width:720px;">
 
-La seguridad es responsabilidad de todos. Sigue siempre las indicaciones del personal de la prueba y permanece únicamente en las zonas autorizadas.
+            La seguridad es responsabilidad de todos.
+            Sigue siempre las indicaciones del personal
+            de la prueba y permanece únicamente en las
+            zonas autorizadas.
 
-</p>
-
-
-<div class="cards" style="margin-top:30px">
-
-
-<article class="card">
-
-<div class="num">
-01
-</div>
-
-<h3>
-Zona segura
-</h3>
-
-<p>
-No te sitúes en el exterior de las curvas, escapatorias, zonas prohibidas ni detrás de cintas o barreras.
-</p>
-
-</article>
+        </p>
 
 
-<article class="card">
-
-<div class="num">
-02
-</div>
-
-<h3>
-Atiende al personal
-</h3>
-
-<p>
-Respeta las instrucciones de comisarios, fuerzas de seguridad y organización en todo momento.
-</p>
-
-</article>
+        <div
+            class="cards"
+            style="margin-top:30px;">
 
 
-<article class="card">
+            <article class="card">
 
-<div class="num">
-03
-</div>
+                <div class="num">
+                    01
+                </div>
 
-<h3>
-Carretera cerrada
-</h3>
+                <h3>
+                    Zona segura
+                </h3>
 
-<p>
-No accedas al tramo durante los cierres. No cruces la carretera mientras haya actividad deportiva.
-</p>
+                <p>
+                    No te sitúes en el exterior de las curvas,
+                    escapatorias, zonas prohibidas ni detrás
+                    de cintas o barreras.
+                </p>
 
-</article>
-
-
-</div>
-
-
-<div class="security-button">
-
-<a
-class="btn"
-href="./seguridad_subida_cumbre.html">
-
-PLAN DE AUTOPROTECCIÓN Y SEGURIDAD ↗
-
-</a>
-
-</div>
+            </article>
 
 
-</div>
+            <article class="card">
+
+                <div class="num">
+                    02
+                </div>
+
+                <h3>
+                    Atiende al personal
+                </h3>
+
+                <p>
+                    Respeta las instrucciones de comisarios,
+                    fuerzas de seguridad y organización
+                    en todo momento.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="num">
+                    03
+                </div>
+
+                <h3>
+                    Carretera cerrada
+                </h3>
+
+                <p>
+                    No accedas al tramo durante los cierres.
+                    No cruces la carretera mientras haya
+                    actividad deportiva.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="security-button">
+
+            <a
+                class="btn"
+                href="./seguridad_subida_cumbre.html">
+
+                PLAN DE AUTOPROTECCIÓN Y SEGURIDAD ↗
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     GALERÍA
+========================= -->
 
 <section class="section dark" id="galeria">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div class="kicker">
-06 / Galería
-</div>
+        <div class="kicker">
+            06 / Galería
+        </div>
 
-<h2>
-EL MOTOR<br>
-EN TENERIFE.
-</h2>
+        <h2>
+            EL MOTOR<br>
+            EN TENERIFE.
+        </h2>
 
-<p class="muted">
+        <p class="muted">
 
-Fotografías de coches de competición en pruebas de montaña de Tenerife. La galería enlaza a reportajes fotográficos de la Subida a Tamaimo, celebrada en Santiago del Teide.
+            Fotografías de coches de competición
+            y pruebas de montaña en Tenerife.
 
-</p>
-
-
-<div class="cards" style="margin-top:28px">
+        </p>
 
 
-<article class="card">
-
-<div class="num">
-TAMAIMO · 2023
-</div>
-
-<h3>
-Galería de competición
-</h3>
-
-<p>
-Imágenes de los equipos participantes en la prueba.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="noopener"
-href="https://motorchicharrero.com/art/13309/subida-a-tamaimo-2023-galeria-1">
-
-Ver fotografías ↗
-
-</a>
-
-</article>
+        <div
+            class="cards"
+            style="margin-top:28px;">
 
 
-<article class="card">
+            <article class="card">
 
-<div class="num">
-TAMAIMO · 2021
-</div>
+                <div class="num">
+                    GALERÍA
+                </div>
 
-<h3>
-46.ª Subida a Tamaimo
-</h3>
+                <h3>
+                    Fotografías
+                </h3>
 
-<p>
-Reportaje fotográfico de vehículos participantes.
-</p>
+                <p>
+                    Próximamente se publicará la galería
+                    oficial de la prueba.
+                </p>
 
-<a
-class="btn"
-target="_blank"
-rel="noopener"
-href="https://motorchicharrero.com/art/12121/46-subida-a-tamaimo-aqui-tienes-la-galeria-de-imagenes-primera-parte-no-te-la-pierdas">
-
-Ver fotografías ↗
-
-</a>
-
-</article>
+            </article>
 
 
-<article class="card">
+            <article class="card">
 
-<div class="num">
-LOCALIZACIÓN
-</div>
+                <div class="num">
+                    PARTICIPANTES
+                </div>
 
-<h3>
-Santiago del Teide
-</h3>
+                <h3>
+                    Equipos y pilotos
+                </h3>
 
-<p>
-Consulta la web de la prueba de referencia para conocer el entorno y la afición local.
-</p>
+                <p>
+                    Las fotografías y resultados de los
+                    participantes se irán incorporando
+                    después de la competición.
+                </p>
 
-<a
-class="btn"
-target="_blank"
-rel="noopener"
-href="https://www.subidatamaimo.com/">
-
-Visitar web ↗
-
-</a>
-
-</article>
+            </article>
 
 
-</div>
+            <article class="card">
 
-</div>
+                <div class="num">
+                    SANTIAGO DEL TEIDE
+                </div>
+
+                <h3>
+                    La montaña
+                </h3>
+
+                <p>
+                    Un escenario espectacular para disfrutar
+                    del automovilismo de montaña.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     CTA
+========================= -->
 
 <section class="cta">
 
-<div class="wrap cta-inner">
+    <div class="wrap cta-inner">
 
-<div>
+        <div>
 
-<div class="eyebrow" style="color:#fff">
-Nos vemos en la montaña
-</div>
+            <div
+                class="eyebrow"
+                style="color:#fff;">
 
-<h2>
-VIVE LA SUBIDA.
-</h2>
+                Nos vemos en la montaña
 
-<p style="margin:0;color:#ffe2e2">
-Toda la emoción, siempre desde una zona segura.
-</p>
+            </div>
 
-</div>
+            <h2>
+                VIVE LA SUBIDA.
+            </h2>
+
+            <p>
+                Toda la emoción, siempre desde una zona segura.
+            </p>
+
+        </div>
 
 
-<a class="btn" href="#inicio">
-Volver arriba ↑
-</a>
+        <a
+            class="btn"
+            href="#inicio">
 
-</div>
+            Volver arriba ↑
+
+        </a>
+
+    </div>
 
 </section>
+
 
 
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div class="foot">
+        <div class="foot">
 
-<div>
+            <div>
 
-<b style="color:#fff">
-SUBIDA LA CUMBRE · SANTIAGO DEL TEIDE
-</b>
+                <b style="color:#fff;">
+                    SUBIDA LA CUMBRE · SANTIAGO DEL TEIDE
+                </b>
 
-<p>
-Web informativa de la prueba · Tenerife, Canarias
-</p>
+                <p>
+                    Web informativa de la prueba · Tenerife, Canarias
+                </p>
 
-</div>
-
-
-<div class="social">
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-Facebook
-</a>
-
-<a href="#">
-Contacto
-</a>
-
-</div>
+            </div>
 
 
-<div>
-© 2026 · Organización de la prueba
-</div>
+            <div class="social">
 
-</div>
+                <a href="#">
+                    Instagram
+                </a>
 
-</div>
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <div>
+                © 2026 · Organización de la prueba
+            </div>
+
+        </div>
+
+    </div>
 
 </footer>
 
 
+
+<script>
+
+document.querySelectorAll(".links a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        document.querySelector(".links").classList.remove("open");
+
+    });
+
+});
+
+</script>
+
+
 </body>
 </html>
-```
-
-**Ojo:** este `index.html` enlaza a `normativa_subida_cumbre.html`, así que ese segundo archivo tiene que estar en la misma carpeta del repositorio.
