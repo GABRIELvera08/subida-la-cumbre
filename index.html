@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Web informativa de la Subida La Cumbre Santiago del Teide.">
 <title>Subida La Cumbre | Santiago del Teide</title>
 
 <style>
-:root{--bg:#0b0d0f;--panel:#15191d;--text:#f5f5f2;--muted:#aeb5ba;--red:#ed3434;--line:#30363b;--lime:#d9ff57}
+:root{
+--bg:#0b0d0f;
+--panel:#15191d;
+--text:#f5f5f2;
+--muted:#aeb5ba;
+--red:#ed3434;
+--line:#30363b;
+--lime:#d9ff57
+}
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box
+}
 
-html{scroll-behavior:smooth}
+html{
+scroll-behavior:smooth
+}
 
 body{
 margin:0;
@@ -412,16 +425,6 @@ color:var(--muted);
 font-size:12px
 }
 
-.notice{
-border:1px solid #4b4d34;
-background:#1a1d15;
-padding:20px;
-color:#e5e8d9;
-font-size:12px;
-line-height:1.7;
-margin-top:24px
-}
-
 .cta{
 padding:65px 0;
 background:var(--red)
@@ -474,7 +477,6 @@ color:#d4d8da;
 margin-top:15px
 }
 
-/* BOTÓN DEL PLAN DE SEGURIDAD */
 .security-button{
 margin-top:30px;
 margin-bottom:10px
@@ -573,12 +575,14 @@ margin-top:25px
 <div class="wrap nav">
 
 <a class="brand" href="#inicio">
+
 <span class="mark">LC</span>
 
 <span>
 SUBIDA LA CUMBRE
 <small>SANTIAGO DEL TEIDE · MOTORSPORT</small>
 </span>
+
 </a>
 
 <button
@@ -589,12 +593,14 @@ onclick="document.querySelector('.links').classList.toggle('open')">
 </button>
 
 <nav class="links">
+
 <a href="#prueba">Inicio</a>
 <a href="#programa">Programa</a>
 <a href="#recorrido">Recorrido</a>
 <a href="#participantes">Participantes</a>
 <a href="#seguridad">Seguridad</a>
 <a href="#galeria">Galería</a>
+
 </nav>
 
 </div>
@@ -602,8 +608,6 @@ onclick="document.querySelector('.links').classList.toggle('open')">
 </header>
 
 <main>
-
-<!-- HERO -->
 
 <section class="hero" id="inicio">
 
@@ -643,8 +647,6 @@ Información del evento
 
 </section>
 
-<!-- TICKER -->
-
 <div class="ticker">
 
 <span>◆ PASIÓN POR EL MOTOR</span>
@@ -654,8 +656,6 @@ Información del evento
 <span>◆ PASIÓN POR EL MOTOR</span>
 
 </div>
-
-<!-- LA PRUEBA -->
 
 <section class="section" id="prueba">
 
@@ -683,17 +683,11 @@ La subida de la Cumbre tiene un trazado muy técnico que no permite errores, per
 
 </div>
 
-<div
-class="photo-card"
-role="img"
-aria-label="Paisaje de montaña">
-</div>
+<div class="photo-card" role="img" aria-label="Paisaje de montaña"></div>
 
 </div>
 
 </section>
-
-<!-- PROGRAMA -->
 
 <section class="section dark" id="programa">
 
@@ -784,8 +778,6 @@ Entrenamientos y mangas de carrera según el reglamento particular y el programa
 
 </section>
 
-<!-- RECORRIDO -->
-
 <section class="section" id="recorrido">
 
 <div class="wrap route">
@@ -842,8 +834,6 @@ VISTA AÉREA · TRAZADO ILUSTRATIVO PENDIENTE DE VALIDACIÓN
 
 </section>
 
-<!-- PARTICIPANTES -->
-
 <section class="section dark" id="participantes">
 
 <div class="wrap">
@@ -881,7 +871,7 @@ Participa
 Accede al formulario de inscripción de la 1ª edición. Los datos y documentos definitivos se confirmarán en el reglamento particular.
 </p>
 
-<a class="btn" href="inscripcion_subida_cumbre.html">
+<a class="btn" href="./inscripcion_subida_cumbre.html">
 Participa · Inscripción ↗
 </a>
 
@@ -924,8 +914,6 @@ Enlace a cronometraje, clasificaciones y resultados finales: se añadirá cuando
 </div>
 
 </section>
-
-<!-- SEGURIDAD -->
 
 <section class="section" id="seguridad">
 
@@ -998,13 +986,11 @@ No accedas al tramo durante los cierres. No cruces la carretera mientras haya ac
 
 </div>
 
-<!-- AQUÍ ESTÁ EL BOTÓN -->
-
 <div class="security-button">
 
 <a
 class="btn"
-href="seguridad_subida_cumbre.html">
+href="./seguridad_subida_cumbre.html">
 
 PLAN DE AUTOPROTECCIÓN Y SEGURIDAD ↗
 
@@ -1012,27 +998,9 @@ PLAN DE AUTOPROTECCIÓN Y SEGURIDAD ↗
 
 </div>
 
-<!-- AVISO -->
-
-<div class="notice">
-
-<b>IMPORTANTE:</b>
-
-Estas indicaciones son orientativas y deberán contrastarse con el plan de seguridad y las instrucciones oficiales de esta edición.
-
-<br><br>
-
-<b>AVISO:</b>
-
-Esta página es una propuesta inicial. Antes de publicarla, la organización debe completar y validar fechas, recorrido, permisos, reglamentos, horarios, accesos y canales oficiales de contacto.
-
-</div>
-
 </div>
 
 </section>
-
-<!-- GALERÍA -->
 
 <section class="section dark" id="galeria">
 
@@ -1048,9 +1016,7 @@ EN TENERIFE.
 </h2>
 
 <p class="muted">
-
 Fotografías de coches de competición en pruebas de montaña de Tenerife. La galería enlaza a reportajes fotográficos de la Subida a Tamaimo, celebrada en Santiago del Teide.
-
 </p>
 
 <div class="cards" style="margin-top:28px">
@@ -1139,20 +1105,14 @@ Visitar web ↗
 
 </section>
 
-<!-- CTA -->
-
 <section class="cta">
 
 <div class="wrap cta-inner">
 
 <div>
 
-<div
-class="eyebrow"
-style="color:#fff">
-
+<div class="eyebrow" style="color:#fff">
 Nos vemos en la montaña
-
 </div>
 
 <h2>
@@ -1174,8 +1134,6 @@ Volver arriba ↑
 </section>
 
 </main>
-
-<!-- FOOTER -->
 
 <footer class="footer">
 
