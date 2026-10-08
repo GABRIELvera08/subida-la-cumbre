@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Plan de Autoprotección y Seguridad de la Subida La Cumbre Santiago del Teide.">
+
+<title>Seguridad | Subida La Cumbre</title>
+
+<style>
+
+:root{
+--bg:#0b0d0f;
+--panel:#15191d;
+--text:#f5f5f2;
+--muted:#aeb5ba;
+--red:#ed3434;
+--line:#30363b;
+--lime:#d9ff57;
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Arial,Helvetica,sans-serif;
+}
+
+a{
+color:inherit;
+text-decoration:none;
+}
+
+.wrap{
+width:min(1160px,92%);
+margin:auto;
+}
+
+/* HEADER */
+
+.top{
+position:relative;
+top:0;
+left:0;
+width:100%;
+z-index:3;
+border-bottom:1px solid #ffffff25;
+background:#0b0d0fee;
+}
+
+.nav{
+height:78px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:900;
+letter-spacing:.04em;
+}
+
+.mark{
+width:42px;
+height:42px;
+background:var(--red);
+display:grid;
+place-items:center;
+font-weight:1000;
+font-style:italic;
+transform:skew(-10deg);
+}
+
+.brand small{
+display:block;
+color:#c5c9cc;
+font-size:10px;
+letter-spacing:.18em;
+margin-top:4px;
+}
+
+/* HERO */
+
+.hero{
+padding:100px 0 80px;
+background:
+linear-gradient(90deg,#080a0d 0%,#101316 100%);
+border-bottom:1px solid var(--line);
+}
+
+.eyebrow{
+color:var(--lime);
+font-weight:900;
+font-size:11px;
+letter-spacing:.22em;
+text-transform:uppercase;
+}
+
+.hero h1{
+font-size:clamp(44px,8vw,88px);
+line-height:.9;
+letter-spacing:-.07em;
+margin:20px 0;
+}
+
+.hero h1 span{
+color:var(--red);
+}
+
+.hero p{
+color:var(--muted);
+font-size:17px;
+line-height:1.7;
+max-width:720px;
+margin:0;
+}
+
+/* CONTENT */
+
+.section{
+padding:80px 0;
+}
+
+.section.dark{
+background:#101316;
+}
+
+.section-header{
+margin-bottom:35px;
+}
+
+.kicker{
+color:var(--red);
+font-size:11px;
+font-weight:900;
+letter-spacing:.2em;
+text-transform:uppercase;
+}
+
+.section h2{
+font-size:clamp(32px,5vw,55px);
+line-height:.98;
+letter-spacing:-.055em;
+margin:12px 0 0;
+}
+
+.section-intro{
+color:var(--muted);
+font-size:15px;
+line-height:1.7;
+max-width:760px;
+margin-top:20px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.card{
+background:var(--panel);
+border:1px solid var(--line);
+padding:27px;
+min-height:240px;
+}
+
+.num{
+color:var(--red);
+font-size:12px;
+font-weight:900;
+letter-spacing:.15em;
+}
+
+.card h3{
+font-size:22px;
+line-height:1.1;
+margin:22px 0 12px;
+}
+
+.card p{
+color:var(--muted);
+font-size:13px;
+line-height:1.7;
+margin:0;
+}
+
+.card ul{
+margin:16px 0 0;
+padding-left:19px;
+color:var(--muted);
+font-size:13px;
+line-height:1.8;
+}
+
+.card li::marker{
+color:var(--red);
+}
+
+/* FULL WIDTH INFORMATION */
+
+.info{
+background:var(--panel);
+border:1px solid var(--line);
+padding:30px;
+margin-top:18px;
+}
+
+.info h3{
+font-size:24px;
+margin:0 0 15px;
+}
+
+.info p{
+color:var(--muted);
+font-size:14px;
+line-height:1.75;
+margin:0;
+}
+
+.info ul{
+color:var(--muted);
+font-size:14px;
+line-height:1.8;
+padding-left:22px;
+}
+
+.info li{
+margin-bottom:8px;
+}
+
+.info li::marker{
+color:var(--red);
+font-weight:bold;
+}
+
+/* EMERGENCY PROTOCOL */
+
+.protocol{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+margin-top:35px;
+}
+
+.step{
+background:var(--panel);
+border:1px solid var(--line);
+padding:23px 18px;
+position:relative;
+}
+
+.step-number{
+color:var(--red);
+font-size:28px;
+font-weight:1000;
+line-height:1;
+}
+
+.step h3{
+font-size:17px;
+margin:20px 0 10px;
+}
+
+.step p{
+color:var(--muted);
+font-size:12px;
+line-height:1.65;
+margin:0;
+}
+
+/* EMERGENCY NOTICE */
+
+.emergency{
+margin-top:35px;
+border:1px solid #7d2424;
+background:#241315;
+padding:25px;
+}
+
+.emergency-title{
+color:#ff6b6b;
+font-weight:900;
+font-size:12px;
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:10px;
+}
+
+.emergency p{
+color:#e8d8d8;
+font-size:13px;
+line-height:1.7;
+margin:0;
+}
+
+/* BUTTON */
+
+.actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:35px;
+}
+
+.btn{
+padding:15px 20px;
+font-size:11px;
+font-weight:900;
+letter-spacing:.08em;
+text-transform:uppercase;
+background:var(--red);
+border:1px solid var(--red);
+color:white;
+display:inline-block;
+cursor:pointer;
+}
+
+.btn.alt{
+background:transparent;
+border-color:#ffffff70;
+}
+
+.btn:hover{
+filter:brightness(1.15);
+}
+
+/* TICKER */
+
+.ticker{
+background:var(--lime);
+color:#10120b;
+overflow:hidden;
+white-space:nowrap;
+font-weight:1000;
+font-size:12px;
+letter-spacing:.15em;
+padding:13px 0;
+}
+
+.ticker span{
+margin:0 28px;
+}
+
+/* FOOTER */
+
+.footer{
+padding:35px 0;
+color:var(--muted);
+font-size:11px;
+}
+
+.foot{
+display:flex;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap;
+border-top:1px solid var(--line);
+padding-top:25px;
+}
+
+.social{
+display:flex;
+gap:18px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.protocol{
+grid-template-columns:1fr;
+}
+
+.card{
+min-height:auto;
+}
+
+}
+
+@media(max-width:760px){
+
+.nav{
+height:70px;
+}
+
+.brand{
+font-size:13px;
+}
+
+.brand small{
+font-size:8px;
+}
+
+.hero{
+padding:75px 0 60px;
+}
+
+.hero h1{
+font-size:clamp(42px,14vw,70px);
+}
+
+.section{
+padding:60px 0;
+}
+
+.info{
+padding:22px;
+}
+
+.protocol{
+gap:10px;
+}
+
+.step{
+padding:22px;
+}
+
+.actions{
+display:block;
+}
+
+.actions .btn{
+margin-bottom:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="top">
+
+<div class="wrap nav">
+
+<a class="brand" href="./index.html">
+
+<span class="mark">LC</span>
+
+<span>
+SUBIDA LA CUMBRE
+<small>SANTIAGO DEL TEIDE · MOTORSPORT</small>
+</span>
+
+</a>
+
+<a class="btn alt" href="./index.html">
+← VOLVER A LA WEB
+</a>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="wrap">
+
+<div class="eyebrow">
+05 / Afición y seguridad
+</div>
+
+<h1>
+PLAN DE<br>
+<span>AUTOPROTECCIÓN</span><br>
+Y SEGURIDAD
+</h1>
+
+<p>
+Subida de Montaña · Subida La Cumbre · Santiago del Teide
+</p>
+
+</div>
+
+</section>
+
+
+<div class="ticker">
+
+<span>◆ SEGURIDAD</span>
+<span>◆ PREVENCIÓN</span>
+<span>◆ RESPETO</span>
+<span>◆ PROTECCIÓN</span>
+<span>◆ SUBIDA LA CUMBRE</span>
+
+</div>
+
+
+<!-- INTRODUCCIÓN -->
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="section-header">
+
+<div class="kicker">
+01 / Introducción
+</div>
+
+<h2>
+MARCO LEGAL<br>
+Y COORDINACIÓN.
+</h2>
+
+<p class="section-intro">
+El objetivo del Plan de Autoprotección y Seguridad es garantizar la seguridad de participantes, organización, equipos de intervención y público durante la celebración de una prueba automovilística de montaña en una carretera temporalmente cerrada al tráfico.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<article class="card">
+
+<div class="num">
+OBJETIVO
+</div>
+
+<h3>
+Garantizar la seguridad
+</h3>
+
+<p>
+Garantizar la seguridad de participantes, organizadores y público durante el desarrollo de la prueba, estableciendo medidas de prevención, control e intervención ante posibles incidentes.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+NORMATIVA
+</div>
+
+<h3>
+Marco normativo
+</h3>
+
+<p>
+La organización deberá aplicar la normativa de Protección Civil, las normas y reglamentos de la RFEDA y de la FCA (Federación Canaria de Automobilismo), así como las directrices y autorizaciones correspondientes del Cabildo de Tenerife.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+COORDINACIÓN
+</div>
+
+<h3>
+Servicios de emergencia
+</h3>
+
+<p>
+Se establecerá coordinación y comunicación con el CECOES 1-1-2 Canarias y con los servicios de Guardia Civil de Tráfico, Policía Local, Protección Civil y demás medios de emergencia que correspondan.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SECTORIZACIÓN -->
+
+<section class="section dark">
+
+<div class="wrap">
+
+<div class="section-header">
+
+<div class="kicker">
+02 / Seguridad pasiva
+</div>
+
+<h2>
+SECTORIZACIÓN<br>
+DEL PÚBLICO.
+</h2>
+
+<p class="section-intro">
+La ubicación del público deberá realizarse exclusivamente en las zonas habilitadas por la organización y por el dispositivo de seguridad. Las zonas de mayor riesgo permanecerán completamente prohibidas al público.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<article class="card">
+
+<div class="num">
+ALTO RIESGO
+</div>
+
+<h3>
+Zonas prohibidas
+</h3>
+
+<p>
+Queda prohibida la presencia de público en el exterior de curvas cerradas, puntos de salida de pista y cualquier otra zona considerada de alto riesgo por el plan de seguridad.
+</p>
+
+<ul>
+<li>Doble cinta roja/blanca.</li>
+<li>Cartelería de prohibición.</li>
+<li>Control por personal de seguridad.</li>
+</ul>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+PÚBLICO
+</div>
+
+<h3>
+Zonas habilitadas
+</h3>
+
+<p>
+Los espectadores deberán permanecer únicamente en lugares elevados y protegidos, utilizando las zonas expresamente habilitadas por la organización.
+</p>
+
+<ul>
+<li>Protección mediante barreras naturales.</li>
+<li>Guardarraíles cuando sean adecuados.</li>
+<li>Vallas tipo New Jersey cuando proceda.</li>
+</ul>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+ASISTENCIA
+</div>
+
+<h3>
+Parque cerrado y asistencia
+</h3>
+
+<p>
+Las zonas de parque cerrado y asistencia estarán acotadas y dispondrán de control de acceso. Cada equipo deberá contar con los medios de extinción reglamentarios exigidos.
+</p>
+
+<ul>
+<li>Control de acceso.</li>
+<li>Área delimitada.</li>
+<li>Extintores homologados obligatorios.</li>
+</ul>
+
+</article>
+
+</div>
+
+
+<div class="info">
+
+<h3>
+Regla fundamental para el público
+</h3>
+
+<p>
+Nunca se debe acceder a una zona señalizada como prohibida ni colocarse detrás de una curva, en una escapatoria o en cualquier punto que pueda quedar expuesto a la trayectoria de un vehículo. Las instrucciones de los comisarios y del personal de seguridad deberán respetarse en todo momento.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INTERVENCIÓN -->
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="section-header">
+
+<div class="kicker">
+03 / Intervención
+</div>
+
+<h2>
+DISPOSITIVO DE<br>
+INTERVENCIÓN RÁPIDA.
+</h2>
+
+<p class="section-intro">
+El dispositivo de seguridad deberá disponer de medios de intervención distribuidos estratégicamente a lo largo del tramo para permitir una respuesta rápida ante cualquier incidente.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<article class="card">
+
+<div class="num">
+01 / RESCATE
+</div>
+
+<h3>
+Vehículos de rescate
+</h3>
+
+<p>
+Se contempla la disponibilidad de al menos dos grúas de gran tonelaje distribuidas estratégicamente en el tramo para facilitar la retirada de vehículos y liberar la vía cuando sea necesario.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+02 / COMISARIOS
+</div>
+
+<h3>
+Comisarios de ruta
+</h3>
+
+<p>
+Los comisarios estarán conectados por radio con el Director de Carrera y dispondrán de las banderas reglamentarias. Los puestos deberán situarse buscando visibilidad y comunicación entre ellos.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+03 / CONTROL
+</div>
+
+<h3>
+Vehículos de control
+</h3>
+
+<p>
+El Coche Cero y el Coche Abrepistas verificarán el estado de la carretera y las condiciones de seguridad antes del comienzo de cada manga.
+</p>
+
+</article>
+
+</div>
+
+
+<div class="info">
+
+<h3>
+Comunicación y coordinación
+</h3>
+
+<p>
+La comunicación por radio entre los diferentes puestos de comisarios, el Director de Carrera y los equipos de intervención será fundamental para detectar rápidamente cualquier incidencia, informar de su localización y activar los recursos necesarios.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROTOCOLO -->
+
+<section class="section dark">
+
+<div class="wrap">
+
+<div class="section-header">
+
+<div class="kicker">
+04 / Emergencias
+</div>
+
+<h2>
+PROTOCOLO DE<br>
+ACTUACIÓN.
+</h2>
+
+<p class="section-intro">
+Ante cualquier incidente deberá aplicarse un procedimiento coordinado que permita detectar la emergencia, proteger la zona, movilizar los medios disponibles y restablecer la competición únicamente cuando las condiciones de seguridad lo permitan.
+</p>
+
+</div>
+
+
+<div class="protocol">
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Detección
+</h3>
+
+<p>
+El comisario detecta la incidencia y comunica por radio al Director de Carrera la situación y el kilómetro o punto exacto donde se ha producido.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Neutralización
+</h3>
+
+<p>
+Se ordena bandera roja o la detención de la prueba cuando exista peligro para participantes, público, organización o cuando la vía quede bloqueada.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Movilización
+</h3>
+
+<p>
+Se desplazan los medios de emergencia y rescate necesarios, incluyendo la ambulancia correspondiente y los equipos disponibles para intervenir en el incidente.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Asistencia y evacuación
+</h3>
+
+<p>
+El equipo médico realiza la valoración, triaje y estabilización del herido para proceder, si fuera necesario, a su evacuación al centro hospitalario de referencia en Tenerife.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+05
+</div>
+
+<h3>
+Reanudación
+</h3>
+
+<p>
+Una vez controlada la emergencia y limpia la vía, se comprueba nuevamente que existen condiciones de seguridad antes de autorizar la continuación de la competición.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="emergency">
+
+<div class="emergency-title">
+Protocolo de emergencia
+</div>
+
+<p>
+En caso de accidente o situación de riesgo, el público deberá permanecer en su zona de seguridad, no invadir la carretera y seguir las instrucciones de los comisarios, servicios de emergencia y fuerzas de seguridad. La reanudación de la prueba únicamente podrá producirse cuando el Director de Carrera y los responsables del dispositivo determinen que existen condiciones adecuadas de seguridad.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PÚBLICO -->
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="section-header">
+
+<div class="kicker">
+05 / Afición
+</div>
+
+<h2>
+DISFRUTA LA PRUEBA.<br>
+HAZLO CON SEGURIDAD.
+</h2>
+
+<p class="section-intro">
+La seguridad durante una subida de montaña depende también del comportamiento de los espectadores. Una buena ubicación y el cumplimiento de las instrucciones de los responsables de la prueba son fundamentales.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<article class="card">
+
+<div class="num">
+01
+</div>
+
+<h3>
+Permanece en tu zona
+</h3>
+
+<p>
+No abandones las zonas habilitadas ni cruces la carretera durante la actividad deportiva.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+02
+</div>
+
+<h3>
+Respeta las indicaciones
+</h3>
+
+<p>
+Los comisarios, organización y servicios de seguridad trabajan para proteger a todos los asistentes. Sigue siempre sus instrucciones.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">
+03
+</div>
+
+<h3>
+No pongas en riesgo a nadie
+</h3>
+
+<p>
+Nunca te sitúes en una escapatoria, en el exterior de una curva o en cualquier punto que pueda resultar peligroso para ti o para los participantes.
+</p>
+
+</article>
+
+</div>
+
+
+<div class="actions">
+
+<a class="btn" href="./index.html">
+← VOLVER A LA WEB
+</a>
+
+<a class="btn alt" href="./index.html#seguridad">
+← VOLVER A SEGURIDAD
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+<div class="wrap">
+
+<div class="foot">
+
+<div>
+
+<b style="color:#fff">
+SUBIDA LA CUMBRE · SANTIAGO DEL TEIDE
+</b>
+
+<p>
+Plan de Autoprotección y Seguridad · Tenerife, Canarias
+</p>
+
+</div>
+
+<div class="social">
+
+<a href="./index.html">
+Inicio
+</a>
+
+<a href="./index.html#seguridad">
+Seguridad
+</a>
+
+</div>
+
+<div>
+© 2026 · Organización de la prueba
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
